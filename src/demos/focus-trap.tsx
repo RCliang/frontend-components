@@ -56,7 +56,7 @@ export function FocusTrapDemo() {
         </button>
       </div>
       <button type="button" className={buttonClass} onClick={() => setActive(true)}>
-        外面的按钮
+        开启圈定
       </button>
     </div>
   )

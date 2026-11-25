@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom'
 import type { CSSProperties } from 'react'
 
 const popupClass = 'h-16 w-40 rounded-md border border-accent bg-stage p-2 text-sm'
+const hang = 72
 
 export function PortalDemo() {
   const anchorRef = useRef<HTMLDivElement>(null)
@@ -15,7 +16,7 @@ export function PortalDemo() {
       const rect = anchor.getBoundingClientRect()
       setStyle({
         position: 'fixed',
-        top: rect.top + 56,
+        top: rect.top + hang,
         left: rect.left + 12,
         zIndex: 30,
       })
@@ -35,7 +36,9 @@ export function PortalDemo() {
       <div>
         <p className="mb-2 text-sm">绝对定位，留在容器里，被裁切</p>
         <div className="relative h-24 overflow-hidden rounded-md border border-line bg-paper">
-          <div className={`absolute top-14 left-3 ${popupClass}`}>下半截被裁掉</div>
+          <div className={`absolute left-3 ${popupClass}`} style={{ top: hang }}>
+            这行字被容器裁掉
+          </div>
         </div>
       </div>
       <div>

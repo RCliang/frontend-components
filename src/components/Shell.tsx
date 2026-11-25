@@ -10,8 +10,8 @@ export function Shell({ children }: { children: ReactNode }) {
             组件词典
           </Link>
           <nav className="flex gap-4 text-sm">
-            <Link to="/#libraries">库</Link>
-            <Link to="/#terms">词</Link>
+            <Link to="/terms">词</Link>
+            <Link to="/libraries">库</Link>
           </nav>
         </div>
       </header>

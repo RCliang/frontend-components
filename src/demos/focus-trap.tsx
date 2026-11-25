@@ -8,7 +8,7 @@ function tabbables(root: HTMLElement): HTMLElement[] {
 }
 
 export function FocusTrapDemo() {
-  const [active, setActive] = useState(false)
+  const [active, setActive] = useState(true)
   const panelRef = useRef<HTMLDivElement>(null)
   const firstRef = useRef<HTMLButtonElement>(null)
 

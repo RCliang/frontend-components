@@ -8,7 +8,7 @@ export function DropdownMenuDemo() {
   const [last, setLast] = useState('还没有动作')
   return (
     <div className="flex flex-col items-center gap-3">
-      <DropdownMenu.Root>
+      <DropdownMenu.Root defaultOpen>
         <DropdownMenu.Trigger className={buttonClass}>打开菜单</DropdownMenu.Trigger>
         <DropdownMenu.Portal>
           <DropdownMenu.Content className={`${panelClass} z-50 min-w-36`} sideOffset={8}>

@@ -1,15 +1,23 @@
+import { useState } from 'react'
 import * as Dialog from '@radix-ui/react-dialog'
-import { buttonClass, overlayClass, panelClass } from './ui'
+import { buttonClass, panelClass } from './ui'
 
-const centered = `${panelClass} fixed top-1/2 left-1/2 z-50 w-[min(24rem,calc(100%-2rem))] -translate-x-1/2 -translate-y-1/2`
+const frame = 'relative h-56 w-full'
+const content = `${panelClass} absolute top-1/2 left-1/2 z-10 w-[min(20rem,calc(100%-2rem))] -translate-x-1/2 -translate-y-1/2`
 
 export function DialogDemo() {
+  const [open, setOpen] = useState(true)
+
   return (
-    <Dialog.Root>
-      <Dialog.Trigger className={buttonClass}>打开对话框</Dialog.Trigger>
-      <Dialog.Portal>
-        <Dialog.Overlay className={overlayClass} />
-        <Dialog.Content className={centered}>
+    <div className={frame}>
+      {open ? (
+        <button type="button" className="absolute inset-0 bg-black/40" aria-label="关闭遮罩" onClick={() => setOpen(false)} />
+      ) : null}
+      <Dialog.Root open={open} onOpenChange={setOpen} modal={false}>
+        <div className="flex h-full items-center justify-center">
+          <Dialog.Trigger className={buttonClass}>打开对话框</Dialog.Trigger>
+        </div>
+        <Dialog.Content className={content}>
           <Dialog.Title className="text-lg font-medium">Dialog 对话框</Dialog.Title>
           <Dialog.Description className="mt-2 text-sm leading-6">
             停在中间。点遮罩可以关掉。
@@ -18,7 +26,7 @@ export function DialogDemo() {
             <Dialog.Close className={buttonClass}>关闭</Dialog.Close>
           </div>
         </Dialog.Content>
-      </Dialog.Portal>
-    </Dialog.Root>
+      </Dialog.Root>
+    </div>
   )
 }

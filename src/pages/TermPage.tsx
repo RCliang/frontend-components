@@ -17,7 +17,7 @@ export function TermPage() {
   return (
     <article className="flex flex-col gap-8">
       <div>
-        <Link to="/#terms" className="text-sm text-accent">
+        <Link to="/terms" className="text-sm text-accent">
           全部词
         </Link>
         <p className="mt-4 text-sm text-ink/70">{category.name}</p>

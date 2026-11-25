@@ -107,7 +107,7 @@ export const terms: Record<TermId, Term> = complete<TermId, Term>()({
       { name: '标题', role: '说明这是什么。' },
       { name: '关闭', role: '明确的离开方式。' },
     ],
-    behaviors: ['点遮罩关闭', 'Escape 关闭', 'Tab 留在对话框里', '面板通过 Portal 挂到 body'],
+    behaviors: ['点遮罩关闭', 'Escape 关闭', 'Tab 留在对话框里', '示例留在这一块里，页面还能往下读'],
     demo: 'dialog',
     libraries: [
       { id: 'radix', note: '无样式对话框。点遮罩可以关。' },

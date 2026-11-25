@@ -11,7 +11,7 @@ const itemClass = 'rounded-md px-2 py-1.5 text-sm outline-none data-[highlighted
 
 export function SelectDemo() {
   return (
-    <Select.Root>
+    <Select.Root defaultOpen defaultValue="pine">
       <Select.Trigger className={`${buttonClass} min-w-32 justify-between`} aria-label="选一个值">
         <Select.Value placeholder="选一个值" />
       </Select.Trigger>

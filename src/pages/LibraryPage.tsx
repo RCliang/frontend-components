@@ -11,7 +11,10 @@ export function LibraryPage() {
   return (
     <article className="flex max-w-2xl flex-col gap-8">
       <div>
-        <p className="text-sm text-accent">{library.roleLabel}</p>
+        <Link to="/libraries" className="text-sm text-accent">
+          全部库
+        </Link>
+        <p className="mt-4 text-sm text-accent">{library.roleLabel}</p>
         <h1 className="mt-1 text-3xl font-semibold tracking-tight">{library.name}</h1>
         <p className="mt-3 leading-7">{library.summary}</p>
       </div>

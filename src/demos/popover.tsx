@@ -3,7 +3,7 @@ import { buttonClass, panelClass } from './ui'
 
 export function PopoverDemo() {
   return (
-    <Popover.Root>
+    <Popover.Root defaultOpen>
       <Popover.Trigger className={buttonClass}>打开弹出层</Popover.Trigger>
       <Popover.Portal>
         <Popover.Content className={`${panelClass} z-50`} sideOffset={8}>

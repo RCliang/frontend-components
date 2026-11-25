@@ -8,7 +8,7 @@ const items = [
 
 export function AccordionDemo() {
   return (
-    <Accordion.Root type="multiple" className="w-full max-w-sm">
+    <Accordion.Root type="multiple" defaultValue={['one']} className="w-full max-w-sm">
       {items.map((item) => (
         <Accordion.Item key={item.id} value={item.id} className="border-b border-line">
           <Accordion.Header>

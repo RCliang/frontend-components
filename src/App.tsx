@@ -1,12 +1,13 @@
 import { TooltipProvider } from '@radix-ui/react-tooltip'
-import { BrowserRouter, Route, Routes } from 'react-router'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router'
 import { Toaster } from 'sonner'
 import { routerBasename } from './basename'
 import { Shell } from './components/Shell'
-import { Home } from './pages/Home'
+import { LibrariesIndex } from './pages/LibrariesIndex'
 import { LibraryPage } from './pages/LibraryPage'
 import { NotFound } from './pages/NotFound'
 import { TermPage } from './pages/TermPage'
+import { TermsIndex } from './pages/TermsIndex'
 
 export function App() {
   return (
@@ -15,8 +16,10 @@ export function App() {
         <Toaster theme="system" />
         <Shell>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Navigate to="/terms" replace />} />
+            <Route path="/terms" element={<TermsIndex />} />
             <Route path="/terms/:termId" element={<TermPage />} />
+            <Route path="/libraries" element={<LibrariesIndex />} />
             <Route path="/libraries/:libraryId" element={<LibraryPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

@@ -32,7 +32,7 @@ export function PortalDemo() {
   }, [])
 
   return (
-    <div className="grid w-full gap-6 sm:grid-cols-2">
+    <div className="grid w-full gap-6 @min-[36rem]:grid-cols-2">
       <div>
         <p className="mb-2 text-sm">绝对定位，留在容器里，被裁切</p>
         <div className="relative h-24 overflow-hidden rounded-md border border-line bg-paper">

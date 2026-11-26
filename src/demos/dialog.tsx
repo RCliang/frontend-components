@@ -1,11 +1,13 @@
 import { useState } from 'react'
 import * as Dialog from '@radix-ui/react-dialog'
+import { useOpenAutoFocus } from './surface'
 import { buttonClass, panelClass } from './ui'
 
 const frame = 'relative h-56 w-full'
 const content = `${panelClass} absolute top-1/2 left-1/2 z-10 w-[min(20rem,calc(100%-2rem))] -translate-x-1/2 -translate-y-1/2`
 
 export function DialogDemo() {
+  const blockAutoFocus = useOpenAutoFocus()
   const [open, setOpen] = useState(true)
 
   return (
@@ -17,7 +19,7 @@ export function DialogDemo() {
         <div className="flex h-full items-center justify-center">
           <Dialog.Trigger className={buttonClass}>打开对话框</Dialog.Trigger>
         </div>
-        <Dialog.Content className={content}>
+        <Dialog.Content className={content} onOpenAutoFocus={blockAutoFocus} onCloseAutoFocus={blockAutoFocus}>
           <Dialog.Title className="text-lg font-medium">Dialog 对话框</Dialog.Title>
           <Dialog.Description className="mt-2 text-sm leading-6">
             停在中间。点遮罩可以关掉。

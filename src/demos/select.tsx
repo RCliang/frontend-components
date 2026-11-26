@@ -1,4 +1,5 @@
 import * as Select from '@radix-ui/react-select'
+import { useEmbeddedDemo } from './surface'
 import { buttonClass, panelClass } from './ui'
 
 const options = [
@@ -10,8 +11,9 @@ const options = [
 const itemClass = 'rounded-md px-2 py-1.5 text-sm outline-none data-[highlighted]:bg-line'
 
 export function SelectDemo() {
+  const embedded = useEmbeddedDemo()
   return (
-    <Select.Root defaultOpen defaultValue="pine">
+    <Select.Root defaultOpen={!embedded} defaultValue="pine">
       <Select.Trigger className={`${buttonClass} min-w-32 justify-between`} aria-label="选一个值">
         <Select.Value placeholder="选一个值" />
       </Select.Trigger>

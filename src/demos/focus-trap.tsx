@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { useEmbeddedDemo } from './surface'
 import { buttonClass, panelClass } from './ui'
 
 function tabbables(root: HTMLElement): HTMLElement[] {
@@ -8,7 +9,8 @@ function tabbables(root: HTMLElement): HTMLElement[] {
 }
 
 export function FocusTrapDemo() {
-  const [active, setActive] = useState(true)
+  const embedded = useEmbeddedDemo()
+  const [active, setActive] = useState(!embedded)
   const panelRef = useRef<HTMLDivElement>(null)
   const firstRef = useRef<HTMLButtonElement>(null)
 

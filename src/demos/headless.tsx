@@ -38,7 +38,7 @@ function TabStrip({ styled }: { styled: boolean }) {
 
 export function HeadlessDemo() {
   return (
-    <div className="grid w-full gap-6 sm:grid-cols-2">
+    <div className="grid w-full gap-6 @min-[36rem]:grid-cols-2">
       <div>
         <p className="mb-2 text-sm">无样式</p>
         <TabStrip styled={false} />

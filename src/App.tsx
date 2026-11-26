@@ -3,8 +3,10 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router'
 import { Toaster } from 'sonner'
 import { routerBasename } from './basename'
 import { Shell } from './components/Shell'
+import { ConceptsIndex } from './pages/ConceptsIndex'
 import { LibrariesIndex } from './pages/LibrariesIndex'
 import { LibraryPage } from './pages/LibraryPage'
+import { MotionIndex } from './pages/MotionIndex'
 import { NotFound } from './pages/NotFound'
 import { TermPage } from './pages/TermPage'
 import { TermsIndex } from './pages/TermsIndex'
@@ -18,6 +20,8 @@ export function App() {
           <Routes>
             <Route path="/" element={<Navigate to="/terms" replace />} />
             <Route path="/terms" element={<TermsIndex />} />
+            <Route path="/concepts" element={<ConceptsIndex />} />
+            <Route path="/motion" element={<MotionIndex />} />
             <Route path="/terms/:termId" element={<TermPage />} />
             <Route path="/libraries" element={<LibrariesIndex />} />
             <Route path="/libraries/:libraryId" element={<LibraryPage />} />
